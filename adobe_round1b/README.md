@@ -15,14 +15,23 @@ This project is designed to process scanned or image-based PDF files and extract
 
 round1b/
 ├── main.py
+
 ├── requirements.txt
+
 ├── Dockerfile
+
 ├── README.md
+
 ├── approach_explanation.md
+
 ├── input/
+
 │ └── sample.pdf
+
 ├── output/
+
 │ └── output.json
+
 ├── images/ (generated during execution)
 
 ## How to Run
