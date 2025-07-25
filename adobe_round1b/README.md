@@ -37,29 +37,28 @@ round1b/
 ## How to Run
 
 ### 1. Build the Docker Image
-docker build -t adobe-round1b .
+    docker build -t adobe-round1b .
 
-2. Run the Container
+### 2. Run the Container
+    docker run --rm -v %cd%/input:/app/input -v %cd%/output:/app/output adobe-round1b
+    Replace %cd% with the current directory path if not using PowerShell.
 
-docker run --rm -v %cd%/input:/app/input -v %cd%/output:/app/output adobe-round1b
-Replace %cd% with the current directory path if not using PowerShell.
 
+### 3. After execution, output/output.json will contain:
 
-3. After execution, output/output.json will contain:
-
-{
-  "text": "All extracted plain text...",
-  "tables": [
     {
-      "page": 3,
-      "rows": [
-        ["Name", "Age", "City"],
-        ["John", "22", "Delhi"]
-      ]
-    }
-  ]
-}
-4. Requirements (Handled in Dockerfile)
+      "text": "All extracted plain text...",
+      "tables": [
+      {
+        "page": 3,
+        "rows": [
+           ["Name", "Age", "City"],
+           ["John", "22", "Delhi"]
+        ]
+      }
+    ]
+  }
+### 4. Requirements (Handled in Dockerfile)
 Python 3.10
 pytesseract
 pdf2image
